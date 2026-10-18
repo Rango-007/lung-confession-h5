@@ -224,6 +224,28 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .ck-result.safe{background:rgba(47,158,124,.14)}
 .ck-result.warn{background:rgba(210,72,44,.16)}
 
+
+/* ============ 五招踩刹车 ============ */
+.moves-box{margin:8px 0 18px}
+.moves-box>h4{font-family:var(--fs);font-size:19px;color:var(--ink);margin-bottom:14px}
+.move-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:17px 15px;margin-bottom:12px;display:flex;gap:13px;align-items:flex-start;transition:transform .25s}
+.move-card:active{transform:scale(.98)}
+.move-ico{flex:none;width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,#e8863f,#c2482c);box-shadow:0 6px 16px rgba(194,72,44,.22)}
+.move-ico svg{width:28px;height:28px;fill:#fff}
+.move-card:nth-of-type(2) .move-ico{background:linear-gradient(135deg,#5b9bd5,#3a6ea5);box-shadow:0 6px 16px rgba(58,110,165,.22)}
+.move-card:nth-of-type(3) .move-ico{background:linear-gradient(135deg,#70c47a,#2f9e7c);box-shadow:0 6px 16px rgba(47,158,124,.22)}
+.move-card:nth-of-type(4) .move-ico{background:linear-gradient(135deg,#f7c96b,#c98a1f);box-shadow:0 6px 16px rgba(201,138,31,.22)}
+.move-card:nth-of-type(5) .move-ico{background:linear-gradient(135deg,#a28bd8,#7a5c8e);box-shadow:0 6px 16px rgba(122,92,142,.22)}
+.move-main{flex:1;min-width:0}
+.move-tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;color:#fff;background:#c2482c;margin-bottom:5px}
+.move-card:nth-of-type(2) .move-tag{background:#3a6ea5}
+.move-card:nth-of-type(3) .move-tag{background:#2f9e7c}
+.move-card:nth-of-type(4) .move-tag{background:#c98a1f}
+.move-card:nth-of-type(5) .move-tag{background:#7a5c8e}
+.move-main h4{font-family:var(--fs);font-size:17.5px;color:var(--ink);margin-bottom:5px;line-height:1.35}
+.move-main p{font-size:14px;line-height:1.92;color:var(--muted)}
+.move-main p b{color:var(--accent)}
+
 /* ============ 第四章 ============ */
 .vs2{display:grid;gap:12px;margin:8px 0 20px}
 .vs-card{border-radius:16px;padding:16px;font-size:14px;line-height:1.85}
@@ -826,6 +848,45 @@ footer.credits b{color:#c3cbdc}
       <div class="vs-card vs-good rv d1"><h5>天大的好消息</h5><b>这场破坏的速度，可以被你亲手踩死刹车。</b>而且任何年龄开始，都不算晚。</div>
     </div>
 
+    <div class="moves-box rv">
+      <h4 class="rv d1">把破坏速度踩下来的五招</h4>
+      <div class="move-card rv d1">
+        <div class="move-ico">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" opacity="0"/><path d="M17 6h-1V4c0-1.1-.9-2-2-2h-3c-1.1 0-2 .9-2 2v2H7c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2h3v2h-3V4zm6 14H7V8h10v10z"/><path d="M9 17l6-4-6-4v8z" fill="#fff"/></svg>
+        </div>
+        <div class="move-main"><span class="move-tag">基石</span><h4>第一招 · 戒烟</h4>
+        <p>这是<b>唯一被证实能真正改变病程</b>的干预。戒烟后，肺功能下降的速度会重新回到接近正常人的水平。别信「都抽烟三十年了，戒了也没用」——<b>大错特错，现在掐掉手里那支，就是收益最大的时刻。</b></p></div>
+      </div>
+      <div class="move-card rv d2">
+        <div class="move-ico">
+          <svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 0 0-4 4v.5c0 .28.22.5.5.5h7c.28 0 .5-.22.5-.5V7a4 4 0 0 0-4-4z" opacity=".85"/><rect x="8.5" y="8" width="7" height="11" rx="2"/><path d="M6 12h2M16 12h2M6 15h2M16 15h2" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="move-main"><span class="move-tag">主力</span><h4>第二招 · 规范用药</h4>
+        <p>核心武器是<b>支气管舒张剂</b>（医生常开的 LAMA、LABA 类吸入药），相当于给生锈拥堵的气道「松绑、扩容」。吸入治疗直接作用于肺部，用量小、副作用少。<b>切记：不喘 ≠ 痊愈。</b>慢阻肺和高血压一样需要长期管理，擅自停药是病情反复加重的头号原因。</p></div>
+      </div>
+      <div class="move-card rv d2">
+        <div class="move-ico">
+          <svg viewBox="0 0 24 24"><path d="M5 12l7-9 7 9-7 9z"/><path d="M8 12l4-5 4 5-4 5z" fill="#fff"/></svg>
+        </div>
+        <div class="move-main"><span class="move-tag">护体</span><h4>第三招 · 疫苗</h4>
+        <p>建议每年接种<b>流感疫苗</b>，并按医嘱接种<b>肺炎球菌疫苗</b>。一次严重感冒或肺炎，对慢阻肺患者可能就是一次住院甚至一道坎。疫苗不是「锦上添花」，是减少急性加重的护城河。</p></div>
+      </div>
+      <div class="move-card rv d3">
+        <div class="move-ico">
+          <svg viewBox="0 0 24 24"><path d="M12 4c-4 0-7 3-7 7 0 2.5 1.3 4.7 3.2 6l.5.3c.6.4 1.3.7 2 .9v-2c-.4-.2-.8-.4-1.1-.7l-.3-.2C8.1 14.3 7 12.3 7 11c0-2.8 2.2-5 5-5s5 2.2 5 5c0 1.3-1.1 3.3-2.3 4.3l-.3.2c-.3.3-.7.5-1.1.7v2c.7-.2 1.4-.5 2-.9l.5-.3C19.7 15.7 21 13.5 21 11c0-4-3-7-7-7z"/><circle cx="12" cy="11" r="2" fill="#fff"/></svg>
+        </div>
+        <div class="move-main"><span class="move-tag">神药</span><h4>第四招 · 肺康复</h4>
+        <p>别以为得了肺病就该躺着。恰恰相反，在医生指导下的<b>运动训练 + 呼吸训练</b>，能明显提高活动能力和生活质量。下面这个<b>缩唇呼吸</b>，你现在就可以跟着练。</p></div>
+      </div>
+      <div class="move-card rv d3">
+        <div class="move-ico">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/><circle cx="12" cy="12" r="1.5" fill="#fff"/></svg>
+        </div>
+        <div class="move-main"><span class="move-tag">续航</span><h4>第五招 · 氧疗</h4>
+        <p>如果检查发现在安静状态下血氧就偏低，医生可能会建议<b>长期家庭氧疗</b>。每天足够时长、把血氧维持在目标范围，能减轻心脏负担、改善生存质量。这不是「依赖氧气」，是给身体续上本该有的氧。</p></div>
+      </div>
+    </div>
+
     <div class="breath rv">
       <h4>缩唇呼吸 · 跟练</h4>
       <div class="sub">闭上嘴用鼻子吸气 2 秒 → 缩唇像吹口哨，用 4~6 秒慢慢呼出（吸呼比约 1:2 ~ 1:3）</div>
@@ -969,6 +1030,7 @@ var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s
 /* ================= 音效引擎（Web Audio 合成，无外部文件） ================= */
 var Sound=(function(){
   var ctx=null,noiseBuf=null,enabled=false,blowSrc=null,blowGain=null,breathOsc=null,breathGain=null;
+  var bgmOsc1=null,bgmOsc2=null,bgmGain=null,bgmLfo=null;
   function ac(){ if(!ctx){ var AC=window.AudioContext||window.webkitAudioContext; if(!AC) return null; ctx=new AC(); }
     if(ctx.state==="suspended") ctx.resume(); return ctx; }
   function noise(){ if(noiseBuf) return noiseBuf; var c=ac(); if(!c) return null;
@@ -993,6 +1055,19 @@ var Sound=(function(){
   function blowLevel(v){ if(blowFilter&&enabled){ try{ blowFilter.frequency.setTargetAtTime(300+v*900,ctx.currentTime,.08);}catch(e){} } }
   function blowStop(){ if(!blowSrc) return; try{ blowGain.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+.08);
     blowSrc.stop(ctx.currentTime+.12);}catch(e){} blowSrc=null; blowGain=null; blowFilter=null; }
+  /* 环境背景音乐：轻柔呼吸感 pad，极轻音量，不打扰阅读 */
+  function bgmStart(){ if(!enabled||bgmOsc1) return; var c=ac(); if(!c) return; var t=c.currentTime;
+    bgmGain=c.createGain(); bgmGain.gain.setValueAtTime(.0001,t); bgmGain.gain.exponentialRampToValueAtTime(.018,t+2.5);
+    bgmOsc1=c.createOscillator(); bgmOsc1.type="sine"; bgmOsc1.frequency.setValueAtTime(196,t);
+    bgmOsc2=c.createOscillator(); bgmOsc2.type="triangle"; bgmOsc2.frequency.setValueAtTime(246.9,t);
+    bgmLfo=c.createOscillator(); bgmLfo.frequency.value=.12;
+    var lg=c.createGain(); lg.gain.value=.008; bgmLfo.connect(lg); lg.connect(bgmGain.gain);
+    bgmOsc1.connect(bgmGain); bgmOsc2.connect(bgmGain); bgmGain.connect(c.destination);
+    bgmOsc1.start(t); bgmOsc2.start(t); bgmLfo.start(t); }
+  function bgmStop(){ if(!bgmOsc1) return; var t=ctx?ctx.currentTime:0;
+    try{ bgmGain.gain.cancelScheduledValues(t); bgmGain.gain.setValueAtTime(Math.max(.0001,bgmGain.gain.value),t); bgmGain.gain.exponentialRampToValueAtTime(.0001,t+.8); bgmOsc1.stop(t+.9); if(bgmOsc2)bgmOsc2.stop(t+.9); if(bgmLfo)bgmLfo.stop(t+.9); }catch(e){}
+    bgmOsc1=null; bgmOsc2=null; bgmGain=null; bgmLfo=null; }
+
   function breathStart(){ if(!enabled||breathOsc) return; var c=ac(); if(!c) return; var o=c.createOscillator(); o.type="sine";
     o.frequency.setValueAtTime(330,c.currentTime); breathGain=c.createGain(); breathGain.gain.setValueAtTime(.0001,c.currentTime);
     breathGain.gain.exponentialRampToValueAtTime(.045,c.currentTime+.2);
@@ -1036,7 +1111,7 @@ var Sound=(function(){
     o1.stop(t+dur); o2.stop(t+dur); lfo.stop(t+dur); s.stop(t+dur); }
   return {paper:paper,chime:chime,blowStart:blowStart,blowStop:blowStop,blowLevel:blowLevel,
     breathStart:breathStart,breathStop:breathStop,breathFreq:breathFreq,cough:cough,wheeze:wheeze,
-    setEnabled:function(v){enabled=v; if(!v){blowStop();breathStop();}},
+    setEnabled:function(v){enabled=v; if(!v){blowStop();breathStop();bgmStop();}else{bgmStart();}},
     isEnabled:function(){return enabled}};
 })();
 
