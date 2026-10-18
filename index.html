@@ -944,7 +944,7 @@ footer.credits b{color:#c3cbdc}
 
 <!-- 目录 & 音效 -->
 <div class="dock">
-  <button id="soundBtn" class="off" aria-label="音效开关">音效</button>
+  <button id="soundBtn" aria-label="音效开关">音效</button>
   <button id="fabBtn" aria-label="打开目录">目录</button>
 </div>
 <div class="sheet-mask" id="sheetMask"></div>
@@ -1041,9 +1041,9 @@ var Sound=(function(){
 })();
 
 var soundBtn=$("#soundBtn");
-function setSound(on){ Sound.setEnabled(on); soundBtn.textContent="音效"; soundBtn.classList.toggle("off",!on);
-  try{localStorage.setItem("lungSound",on?"1":"0")}catch(e){} if(on){Sound.chime(true);toast("音效已开启：翻纸 · 气流 · 呼吸引导");} }
-try{ if(localStorage.getItem("lungSound")==="1") setSound(true); }catch(e){}
+function setSound(on,silent){ Sound.setEnabled(on); soundBtn.textContent="音效"; soundBtn.classList.toggle("off",!on);
+  try{localStorage.setItem("lungSound",on?"1":"0")}catch(e){} if(on&&!silent){Sound.chime(true);toast("音效已开启：翻纸 · 气流 · 呼吸引导");} }
+try{ var _s=localStorage.getItem("lungSound"); if(_s==="0") setSound(false,true); else setSound(true,true); }catch(e){ setSound(true,true); }
 soundBtn.addEventListener("click",function(){ setSound(!Sound.isEnabled()); });
 
 /* ================= 目录 ================= */
