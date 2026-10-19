@@ -417,6 +417,32 @@ footer.credits b{color:#c3cbdc}
       <svg id="lungTree" viewBox="0 0 360 400" aria-label="肺的结构示意图">
         <circle cx="180" cy="195" r="152" fill="rgba(47,158,124,.08)"/>
         <circle cx="180" cy="195" r="152" fill="none" stroke="rgba(47,158,124,.25)" stroke-dasharray="4 7"/>
+        <defs>
+          <radialGradient id="ltG" cx="50%" cy="28%" r="78%">
+            <stop offset="0%" stop-color="#fbdde2"/><stop offset="58%" stop-color="#f3b3bd"/><stop offset="100%" stop-color="#d58797"/>
+          </radialGradient>
+        </defs>
+        <g id="lungRight">
+          <path d="M152,74 C130,74 108,82 90,100 C70,120 56,150 54,186 C53,214 58,244 74,266 C90,288 114,298 138,296 C149,295 157,289 159,277 C161,260 158,242 158,222 C158,202 158,182 158,162 C158,142 158,120 155,102 C153,88 153,80 152,74 Z" fill="url(#ltG)" stroke="#c97684" stroke-width="2.5"/>
+          <g fill="none" stroke="#b8536a" stroke-width="2" stroke-linecap="round" opacity=".7">
+            <path d="M60,158 C92,178 128,212 158,252"/>
+            <path d="M118,204 C136,199 150,197 158,196"/>
+          </g>
+        </g>
+        <g id="lungLeft">
+          <path d="M208,74 C230,74 252,82 270,100 C290,120 304,150 306,186 C307,214 302,244 286,266 C270,288 246,298 222,296 C211,295 203,289 201,277 C199,260 202,242 202,222 C202,202 202,182 202,162 C202,142 202,120 205,102 C207,88 207,80 208,74 Z" fill="url(#ltG)" stroke="#c97684" stroke-width="2.5"/>
+          <g fill="none" stroke="#b8536a" stroke-width="2" stroke-linecap="round" opacity=".7">
+            <path d="M300,158 C268,178 232,212 202,252"/>
+          </g>
+        </g>
+        <g font-size="11" fill="#a4495e" font-weight="700" text-anchor="middle" opacity=".85">
+          <text x="100" y="120">上叶</text><text x="141" y="226">中叶</text><text x="92" y="262">下叶</text>
+          <text x="250" y="120">上叶</text><text x="258" y="262">下叶</text>
+        </g>
+        <g font-size="13.5" fill="#8a5a2e" font-weight="700" text-anchor="middle">
+          <text x="106" y="322">右肺 · 3 叶</text>
+          <text x="254" y="322">左肺 · 2 叶</text>
+        </g>
         <g id="p-cilia" stroke="#d98a97" stroke-width="2.6" stroke-linecap="round">
           <line x1="168" y1="36" x2="158" y2="32"/><line x1="168" y1="48" x2="158" y2="44"/>
           <line x1="168" y1="60" x2="158" y2="56"/><line x1="168" y1="72" x2="158" y2="68"/>
@@ -427,22 +453,14 @@ footer.credits b{color:#c3cbdc}
           <line x1="208" y1="112" x2="216" y2="106"/><line x1="208" y1="124" x2="216" y2="118"/>
         </g>
         <g id="p-bronchi" fill="none" stroke="#e79aa6" stroke-linecap="round">
-          <path d="M180,100 C168,110 154,120 146,134" stroke-width="13"/>
-          <path d="M146,134 C138,144 132,152 124,160" stroke-width="10"/>
-          <path d="M124,160 C118,168 114,174 108,180" stroke-width="7.5"/>
-          <path d="M108,180 C104,186 101,190 97,194" stroke-width="5.5"/>
-          <path d="M97,194 C95,198 93,201 91,204" stroke-width="4"/>
-          <path d="M146,134 C142,146 140,154 138,164" stroke-width="8"/>
-          <path d="M138,164 C136,172 134,178 132,184" stroke-width="6"/>
-          <path d="M132,184 C131,189 130,192 129,196" stroke-width="4.5"/>
-          <path d="M180,100 C192,110 206,120 214,134" stroke-width="13"/>
-          <path d="M214,134 C222,144 228,152 236,160" stroke-width="10"/>
-          <path d="M236,160 C242,168 246,174 252,180" stroke-width="7.5"/>
-          <path d="M252,180 C256,186 259,190 263,194" stroke-width="5.5"/>
-          <path d="M263,194 C265,198 267,201 269,204" stroke-width="4"/>
-          <path d="M214,134 C218,146 220,154 222,164" stroke-width="8"/>
-          <path d="M222,164 C224,172 226,178 228,184" stroke-width="6"/>
-          <path d="M228,184 C229,189 230,192 231,196" stroke-width="4.5"/>
+          <path d="M180,102 C170,112 162,120 156,128" stroke-width="12"/>
+          <path d="M180,102 C190,112 198,120 204,128" stroke-width="12"/>
+          <path d="M156,128 C132,124 116,112 104,100" stroke-width="7"/>
+          <path d="M156,128 C150,152 146,174 142,196" stroke-width="6"/>
+          <path d="M156,136 C130,162 110,194 92,224" stroke-width="7.5"/>
+          <path d="M204,128 C228,124 244,112 256,100" stroke-width="7"/>
+          <path d="M204,128 C210,152 214,174 218,196" stroke-width="6"/>
+          <path d="M204,136 C230,162 250,194 268,224" stroke-width="7.5"/>
         </g>
         <g id="p-alveoli"></g>
         <g id="p-mucus">
@@ -450,8 +468,8 @@ footer.credits b{color:#c3cbdc}
           <circle cx="164" cy="374" r="4" fill="#a9dcc6"/><circle cx="196" cy="374" r="4" fill="#a9dcc6"/>
         </g>
         <g id="p-trachea">
-          <rect x="171" y="22" width="18" height="80" rx="9" fill="#efb3bc" stroke="#d98a97" stroke-width="2.5"/>
-          <path d="M171,34 h18 M171,46 h18 M171,58 h18 M171,70 h18 M171,82 h18" stroke="rgba(217,138,151,.35)" stroke-width="2"/>
+          <rect x="171" y="20" width="18" height="82" rx="9" fill="#efb3bc" stroke="#d98a97" stroke-width="2.5"/>
+          <path d="M171,32 h18 M171,44 h18 M171,56 h18 M171,68 h18 M171,80 h18 M171,92 h18" stroke="rgba(217,138,151,.35)" stroke-width="2"/>
         </g>
       </svg>
     </div>
@@ -513,6 +531,11 @@ footer.credits b{color:#c3cbdc}
           <path id="lungSickR" d="M156,54 C182,54 204,68 216,92 C230,118 237,152 233,182 C229,208 217,226 199,232 C183,237 167,234 158,223 C153,216 151,206 152,194 C153,182 157,174 159,166 C161,158 159,150 157,142 C155,134 153,126 154,116 C155,106 157,96 155,86 C153,74 152,62 156,54 Z" fill="url(#lungSick)" opacity="0"/>
           <ellipse cx="108" cy="96" rx="24" ry="36" fill="rgba(255,255,255,.3)" filter="url(#lungSoft)" transform="rotate(-14 108 96)"/>
           <ellipse cx="202" cy="96" rx="24" ry="36" fill="rgba(255,255,255,.3)" filter="url(#lungSoft)" transform="rotate(14 202 96)"/>
+          <g id="lungFissures" fill="none" stroke="rgba(120,58,70,.72)" stroke-width="1.6" stroke-linecap="round">
+            <path d="M80,120 C104,142 132,168 152,200"/>
+            <path d="M116,150 C134,146 146,145 154,146"/>
+            <path d="M230,120 C206,142 178,168 158,200"/>
+          </g>
         </g>
         <g id="smokeBronchi" fill="none" stroke="#cf8a95" stroke-linecap="round">
           <path data-w="7"   d="M155,62 C148,74 139,86 128,98" stroke-width="7"/>
@@ -858,7 +881,7 @@ footer.credits b{color:#c3cbdc}
       </div>
       <div class="move-card rv d2">
         <div class="move-head"><span class="move-tag">主力</span><h4>第二招 · 规范用药</h4>
-          <span class="move-ico"><svg viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="5" height="12" rx="2.5"/><rect x="9.9" y="3.6" width="2.6" height="5" rx="1.1"/><line x1="8.5" y1="13.4" x2="13.5" y2="13.4"/><line x1="8.5" y1="16.4" x2="13.5" y2="16.4"/></svg></span>
+          <span class="move-ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="4" height="8" rx="1"/><rect x="4" y="2" width="2" height="3" rx=".7"/><line x1="7" y1="8" x2="10" y2="8"/><path d="M11 6c0 0-2 3-3 6s0 6 0 6"/><path d="M11 6c0 0 2 3 3 6s0 6 0 6"/><line x1="15" y1="11" x2="19" y2="9"/><line x1="15" y1="13" x2="19" y2="15"/></svg></span>
         </div>
         <p>核心武器是<b>支气管舒张剂</b>（医生常开的 LAMA、LABA 类吸入药），相当于给生锈拥堵的气道「松绑、扩容」。吸入治疗直接作用于肺部，用量小、副作用少。<b>切记：不喘 ≠ 痊愈。</b>慢阻肺和高血压一样需要长期管理，擅自停药是病情反复加重的头号原因。</p>
       </div>
@@ -869,7 +892,7 @@ footer.credits b{color:#c3cbdc}
         <p>建议每年接种<b>流感疫苗</b>，并按医嘱接种<b>肺炎球菌疫苗</b>。一次严重感冒或肺炎，对慢阻肺患者可能就是一次住院甚至一道坎。疫苗不是「锦上添花」，是减少急性加重的护城河。</p>
       </div>
       <div class="move-card rv d3">
-        <div class="move-head"><span class="move-tag">神药</span><h4>第四招 · 肺康复</h4>
+        <div class="move-head"><span class="move-tag">巩固</span><h4>第四招 · 肺康复</h4>
           <span class="move-ico"><svg viewBox="0 0 24 24"><path d="M12 3.5v6.5"/><path d="M11.4 9.4c-.9.2-1.5.9-1.5 1.9 0 1.7-.8 3-2.4 4.1-.7.5-1.5.3-1.8-.4-.6-1.4-1-3.2-.4-5.1C6.6 8.4 8.1 7.8 9.6 8.5"/><path d="M12.6 9.4c.9.2 1.5.9 1.5 1.9 0 1.7.8 3 2.4 4.1.7.5 1.5.3 1.8-.4.6-1.4 1-3.2.4-5.1C17.4 8.4 15.9 7.8 14.4 8.5"/></svg></span>
         </div>
         <p>别以为得了肺病就该躺着。恰恰相反，在医生指导下的<b>运动训练 + 呼吸训练</b>，能明显提高活动能力和生活质量。下面这个<b>缩唇呼吸</b>，你现在就可以跟着练。</p>
@@ -1172,7 +1195,7 @@ tio.observe($("#letter"));
 /* ================= 肺树互动 ================= */
 (function(){
   var NS="http://www.w3.org/2000/svg";
-  var clusters=[[91,204],[129,196],[132,184],[138,164],[108,180],[124,160],[146,134],[269,204],[231,196],[228,184],[222,164],[252,180],[236,160],[214,134]];
+  var clusters=[[104,100],[142,196],[92,224],[120,140],[128,150],[256,100],[268,224],[240,140],[228,150]];
   var offs=[[-9,-4,5],[6,-8,4.5],[-2,7,6],[9,4,4],[-10,5,3.5],[3,10,3]];
   var g=$("#p-alveoli");
   clusters.forEach(function(c){ offs.forEach(function(o){
