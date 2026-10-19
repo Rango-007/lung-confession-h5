@@ -109,13 +109,10 @@ h2{font-family:var(--fs);font-size:27px;line-height:1.4;margin:0 0 16px;font-wei
 #lungTree [id^="p-"].on{filter:drop-shadow(0 0 10px rgba(240,194,107,.85))}
 .tree-info{min-height:118px;background:var(--card);border:1px dashed var(--line);border-radius:14px;padding:14px 16px;margin-bottom:14px;font-size:14px;line-height:1.85;color:var(--muted);transition:.3s}
 .tree-info h4{font-size:16px;color:var(--ink);margin-bottom:6px;font-family:var(--fs)}
-.leaf-tag{cursor:pointer;-webkit-tap-highlight-color:transparent}
-.leaf-tag .leaf-body{transition:transform .18s ease;transform-origin:center;transform-box:fill-box}
-.leaf-tag:hover .leaf-body,.leaf-tag.on .leaf-body{transform:scale(1.12)}
-.leaf-tag .leaf-shape{transition:fill .18s,stroke .18s}
-.leaf-tag.on .leaf-shape{fill:#fff;stroke:#a03a55;stroke-width:2.4}
-.leaf-txt{pointer-events:none;user-select:none}
-#lungTree #lungRight.lobe-on>path:first-of-type,#lungTree #lungLeft.lobe-on>path:first-of-type{stroke:#b8536a;stroke-width:3.2}
+#lungTree .lobe{cursor:pointer;transition:opacity .25s;-webkit-tap-highlight-color:transparent}
+#lungTree .lobe:hover{fill:#f2a5ae}
+#lungTree .lobe.on{fill:#e88d9c;stroke:#a03a55}
+#treeBox.lobefocus #lungTree .lobe:not(.on){opacity:.45}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
 .chip{font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--muted);transition:.25s;user-select:none}
 .chip.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
@@ -430,67 +427,26 @@ footer.credits b{color:#c3cbdc}
           </radialGradient>
         </defs>
         <g id="lungRight">
-          <path d="M152,74 C130,74 108,82 90,100 C70,120 56,150 54,186 C53,214 58,244 74,266 C90,288 114,298 138,296 C149,295 157,289 159,277 C161,260 158,242 158,222 C158,202 158,182 158,162 C158,142 158,120 155,102 C153,88 153,80 152,74 Z" fill="url(#ltG)" stroke="#c97684" stroke-width="2.5"/>
-          <g fill="none" stroke="#b8536a" stroke-width="2" stroke-linecap="round" opacity=".7">
+          <path class="lobe" data-lobe="upperR" role="button" aria-label="右肺上叶，点击查看介绍" d="M152,74 C130,74 108,82 90,100 C70,120 56,150 60,158 C92,178 128,212 118,204 C136,199 150,197 158,196 C158,202 158,182 158,162 C158,142 158,120 155,102 C153,88 153,80 152,74 Z" fill="url(#ltG)" stroke="#c97684" stroke-width="2.5"/>
+          <path class="lobe" data-lobe="middleR" role="button" aria-label="右肺中叶，点击查看介绍" d="M118,204 C136,199 150,197 158,196 C158,214 158,238 158,252 C128,212 92,178 118,204 Z" fill="url(#ltG)" stroke="#c97684" stroke-width="2.5"/>
+          <path class="lobe" data-lobe="lowerR" role="button" aria-label="右肺下叶，点击查看介绍" d="M60,158 C92,178 128,212 158,252 C158,262 161,268 159,277 C157,289 149,295 138,296 C114,298 90,288 74,266 C58,244 53,214 54,186 C56,178 58,168 60,158 Z" fill="url(#ltG)" stroke="#c97684" stroke-width="2.5"/>
+          <g fill="none" stroke="#b8536a" stroke-width="2" stroke-linecap="round" opacity=".7" pointer-events="none">
             <path d="M60,158 C92,178 128,212 158,252"/>
             <path d="M118,204 C136,199 150,197 158,196"/>
           </g>
+          <g font-size="11" fill="#a4495e" font-weight="700" text-anchor="middle" opacity=".85" pointer-events="none">
+            <text x="100" y="122">上叶</text><text x="141" y="228">中叶</text><text x="92" y="262">下叶</text>
+          </g>
         </g>
         <g id="lungLeft">
-          <path d="M208,74 C230,74 252,82 270,100 C290,120 304,150 306,186 C307,214 302,244 286,266 C270,288 246,298 222,296 C211,295 203,289 201,277 C199,260 202,242 202,222 C202,202 202,182 202,162 C202,142 202,120 205,102 C207,88 207,80 208,74 Z" fill="url(#ltG)" stroke="#c97684" stroke-width="2.5"/>
-          <g fill="none" stroke="#b8536a" stroke-width="2" stroke-linecap="round" opacity=".7">
+          <path class="lobe" data-lobe="upperL" role="button" aria-label="左肺上叶，点击查看介绍" d="M208,74 C230,74 252,82 270,100 C290,120 304,150 300,158 C268,178 232,206 232,206 C216,194 202,180 202,162 C202,142 202,120 205,102 C207,88 207,80 208,74 Z" fill="url(#ltG)" stroke="#c97684" stroke-width="2.5"/>
+          <path class="lobe" data-lobe="lowerL" role="button" aria-label="左肺下叶，点击查看介绍" d="M232,206 C232,214 214,236 202,252 C202,262 199,268 201,277 C203,289 211,295 222,296 C246,298 270,288 286,266 C302,244 307,214 306,186 C304,178 302,168 300,158 C268,178 232,206 232,206 Z" fill="url(#ltG)" stroke="#c97684" stroke-width="2.5"/>
+          <g fill="none" stroke="#b8536a" stroke-width="2" stroke-linecap="round" opacity=".7" pointer-events="none">
             <path d="M300,158 C268,178 232,212 202,252"/>
           </g>
-        </g>
-        <g class="leaf-tag" data-leaf="upperR" transform="translate(98,128)" role="button" aria-label="右肺上叶，点击查看介绍">
-          <g class="leaf-body">
-            <circle r="24" fill="transparent"/>
-            <path class="leaf-shape" d="M0,-27 C13,-19 21,-4 19,13 C17,28 9,36 0,40 C-9,36 -17,28 -19,13 C-21,-4 -13,-19 0,-27 Z" fill="rgba(255,255,255,.66)" stroke="#b8536a" stroke-width="2"/>
-            <g fill="none" stroke="#c97684" stroke-width="1.4" stroke-linecap="round" opacity=".85">
-              <path d="M0,-19 L0,33"/><path d="M0,-7 L-10,0 M0,-7 L10,0 M0,7 L-8,13 M0,7 L8,13"/>
-            </g>
+          <g font-size="11" fill="#a4495e" font-weight="700" text-anchor="middle" opacity=".85" pointer-events="none">
+            <text x="250" y="122">上叶</text><text x="258" y="262">下叶</text>
           </g>
-          <text class="leaf-txt" x="0" y="-9" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4495e">上叶</text>
-        </g>
-        <g class="leaf-tag" data-leaf="middleR" transform="translate(141,228)" role="button" aria-label="右肺中叶，点击查看介绍">
-          <g class="leaf-body">
-            <circle r="24" fill="transparent"/>
-            <path class="leaf-shape" d="M0,-27 C13,-19 21,-4 19,13 C17,28 9,36 0,40 C-9,36 -17,28 -19,13 C-21,-4 -13,-19 0,-27 Z" fill="rgba(255,255,255,.66)" stroke="#b8536a" stroke-width="2"/>
-            <g fill="none" stroke="#c97684" stroke-width="1.4" stroke-linecap="round" opacity=".85">
-              <path d="M0,-19 L0,33"/><path d="M0,-7 L-10,0 M0,-7 L10,0 M0,7 L-8,13 M0,7 L8,13"/>
-            </g>
-          </g>
-          <text class="leaf-txt" x="0" y="-9" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4495e">中叶</text>
-        </g>
-        <g class="leaf-tag" data-leaf="lowerR" transform="translate(92,262)" role="button" aria-label="右肺下叶，点击查看介绍">
-          <g class="leaf-body">
-            <circle r="24" fill="transparent"/>
-            <path class="leaf-shape" d="M0,-27 C13,-19 21,-4 19,13 C17,28 9,36 0,40 C-9,36 -17,28 -19,13 C-21,-4 -13,-19 0,-27 Z" fill="rgba(255,255,255,.66)" stroke="#b8536a" stroke-width="2"/>
-            <g fill="none" stroke="#c97684" stroke-width="1.4" stroke-linecap="round" opacity=".85">
-              <path d="M0,-19 L0,33"/><path d="M0,-7 L-10,0 M0,-7 L10,0 M0,7 L-8,13 M0,7 L8,13"/>
-            </g>
-          </g>
-          <text class="leaf-txt" x="0" y="-9" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4495e">下叶</text>
-        </g>
-        <g class="leaf-tag" data-leaf="upperL" transform="translate(250,128)" role="button" aria-label="左肺上叶，点击查看介绍">
-          <g class="leaf-body">
-            <circle r="24" fill="transparent"/>
-            <path class="leaf-shape" d="M0,-27 C13,-19 21,-4 19,13 C17,28 9,36 0,40 C-9,36 -17,28 -19,13 C-21,-4 -13,-19 0,-27 Z" fill="rgba(255,255,255,.66)" stroke="#b8536a" stroke-width="2"/>
-            <g fill="none" stroke="#c97684" stroke-width="1.4" stroke-linecap="round" opacity=".85">
-              <path d="M0,-19 L0,33"/><path d="M0,-7 L-10,0 M0,-7 L10,0 M0,7 L-8,13 M0,7 L8,13"/>
-            </g>
-          </g>
-          <text class="leaf-txt" x="0" y="-9" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4495e">上叶</text>
-        </g>
-        <g class="leaf-tag" data-leaf="lowerL" transform="translate(258,262)" role="button" aria-label="左肺下叶，点击查看介绍">
-          <g class="leaf-body">
-            <circle r="24" fill="transparent"/>
-            <path class="leaf-shape" d="M0,-27 C13,-19 21,-4 19,13 C17,28 9,36 0,40 C-9,36 -17,28 -19,13 C-21,-4 -13,-19 0,-27 Z" fill="rgba(255,255,255,.66)" stroke="#b8536a" stroke-width="2"/>
-            <g fill="none" stroke="#c97684" stroke-width="1.4" stroke-linecap="round" opacity=".85">
-              <path d="M0,-19 L0,33"/><path d="M0,-7 L-10,0 M0,-7 L10,0 M0,7 L-8,13 M0,7 L8,13"/>
-            </g>
-          </g>
-          <text class="leaf-txt" x="0" y="-9" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4495e">下叶</text>
         </g>
         <g font-size="13.5" fill="#8a5a2e" font-weight="700" text-anchor="middle">
           <text x="106" y="322">右肺 · 3 叶</text>
@@ -527,12 +483,12 @@ footer.credits b{color:#c3cbdc}
       </svg>
     </div>
     <div class="chips" id="treeChips">
-      <button class="chip" data-part="lobes">肺叶 · 左二右三</button>
       <button class="chip" data-part="trachea">气管 · 树干</button>
       <button class="chip" data-part="bronchi">支气管 · 树枝</button>
       <button class="chip" data-part="alveoli">肺泡 · 小葡萄</button>
       <button class="chip" data-part="cilia">纤毛 · 扫帚队</button>
       <button class="chip" data-part="mucus">黏液 · 粘胶队</button>
+      <button class="chip" data-part="lobes">肺叶 · 左二右三</button>
     </div>
     <div class="tree-info rv d1" id="treeInfo">点击上方任一标签，认识我的身体</div>
 
@@ -1271,18 +1227,17 @@ tio.observe($("#letter"));
     mucus:{t:"黏液 · 粘胶队",d:"负责把垃圾粘住，等着被你咳出去。一粘一扫，和纤毛配合默契，是肺里的常驻保洁组合。"}
   };
   var box=$("#treeBox"),panel=$("#treeInfo");
-  var lobeOf={upperR:"lungRight",middleR:"lungRight",lowerR:"lungRight",upperL:"lungLeft",lowerL:"lungLeft"};
   function focus(raw){ var leaf=raw.replace("leaf-",""); var part=info[raw]?raw:leaf; var d=info[part]; if(!d) return;
+    var isLobe=(raw.indexOf("leaf-")===0)||part==="lobes";
     box.classList.add("focus");
+    box.classList.toggle("lobefocus",isLobe);
     $$("#lungTree [id^='p-']").forEach(function(g2){ g2.classList.toggle("on",g2.id==="p-"+part); });
     $$("#treeChips .chip").forEach(function(c){ c.classList.toggle("on",c.dataset.part===part); });
-    $$("#lungTree .leaf-tag").forEach(function(l){ l.classList.toggle("on",part==="lobes"||l.dataset.leaf===leaf); });
-    var lobe=lobeOf[leaf];
-    ["lungRight","lungLeft"].forEach(function(id){ $("#"+id).classList.toggle("lobe-on",part==="lobes"||id===lobe); });
+    $$("#lungTree .lobe").forEach(function(l){ l.classList.toggle("on",isLobe&&(part==="lobes"||l.dataset.lobe===leaf)); });
     panel.innerHTML="<h4>"+d.t+"</h4>"+d.d; }
   $$("#treeChips .chip").forEach(function(c){ c.addEventListener("click",function(){ focus(c.dataset.part); }); });
   $$("#lungTree [id^='p-']").forEach(function(g2){ g2.addEventListener("click",function(){ focus(g2.id.replace("p-","")); }); });
-  $$("#lungTree .leaf-tag").forEach(function(l){ l.addEventListener("click",function(ev){ ev.stopPropagation(); focus("leaf-"+l.dataset.leaf); }); });
+  $$("#lungTree .lobe").forEach(function(l){ l.addEventListener("click",function(ev){ ev.stopPropagation(); focus("leaf-"+l.dataset.lobe); }); });
 })();
 
 /* ================= 吸烟滑杆 ================= */
