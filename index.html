@@ -151,7 +151,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .harm p{font-size:13.5px;line-height:1.8;color:var(--muted)}
 .harm p b{color:var(--accent)}
 
-/* 气球 vs 风箱 */
+/* 新海绵 vs 旧海绵 */
 .bb{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px 16px;margin:18px 0}
 .bb-tabs{display:flex;gap:8px;margin-bottom:14px}
 .bb-tabs button{flex:1;font-size:13.5px;padding:10px 6px;border-radius:12px;border:1px solid var(--line);color:var(--muted);transition:.25s}
@@ -160,10 +160,10 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .bb-svg{width:170px;height:170px;display:none;flex:none}
 .bb-svg.on{display:block}
 .bb-cap{text-align:center;font-size:13px;color:var(--muted);line-height:1.7;padding:0 10px;margin-top:14px;min-height:48px}
-#bbBalloonG.play{animation:balloonPlay 3.2s ease-in-out infinite}
-@keyframes balloonPlay{0%{transform:scale(.55)}45%{transform:scale(1.12)}75%{transform:scale(1.12)}100%{transform:scale(.55)}}
-#bbBellowsG.play{animation:bellowsPlay 3.6s ease-in-out infinite}
-@keyframes bellowsPlay{0%{transform:scaleX(.62)}55%{transform:scaleX(1.14)}100%{transform:scaleX(1.14)}}
+#bbSpongeNewG.play{animation:spongeNewPlay 3.4s ease-in-out infinite}
+@keyframes spongeNewPlay{0%,6%{transform:scale(1,1)}32%{transform:scale(1.07,.78)}54%{transform:scale(1.07,.78)}80%,100%{transform:scale(1,1)}}
+#bbSpongeOldG.play{animation:spongeOldPlay 4.6s ease-in-out infinite}
+@keyframes spongeOldPlay{0%,6%{transform:scale(1,1)}34%{transform:scale(1.05,.7)}46%{transform:scale(1.03,.76)}58%{transform:scale(1.02,.81)}70%{transform:scale(1.01,.84)}100%{transform:scale(1,.86)}}
 .bb-note{margin-top:12px;font-size:13px;line-height:1.8;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px}
 .bb-note b{color:var(--accent)}
 
@@ -600,32 +600,52 @@ footer.credits b{color:#c3cbdc}
 
     <div class="bb rv">
       <div class="bb-tabs">
-        <button class="on" data-bb="balloon">新气球 · 健康的肺</button>
-        <button data-bb="bellows">旧风箱 · 我的肺</button>
+        <button class="on" data-bb="spongeNew">新海绵 · 健康的肺</button>
+        <button data-bb="spongeOld">旧海绵 · 我的肺</button>
       </div>
       <div class="bb-stage">
-        <svg id="bbBalloon" class="bb-svg on" viewBox="0 0 200 200">
-          <g id="bbBalloonG" style="transform-origin:100px 110px">
-            <path d="M100,30 C140,30 168,66 168,106 C168,148 138,176 100,176 C62,176 32,148 32,106 C32,66 60,30 100,30 Z" fill="#f6b8c0" stroke="#d98a97" stroke-width="3"/>
-            <path d="M100,30 C140,30 168,66 168,106 C168,148 138,176 100,176 C62,176 32,148 32,106 C32,66 60,30 100,30 Z" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" transform="scale(.94)"/>
-            <path d="M96,176 L104,176 L100,196 Z" fill="#d98a97"/>
-            <ellipse cx="78" cy="80" rx="16" ry="22" fill="rgba(255,255,255,.45)"/>
+        <svg id="bbSpongeNew" class="bb-svg on" viewBox="0 0 200 200">
+          <g id="bbSpongeNewG" style="transform-origin:100px 146px">
+            <g>
+              <rect x="87" y="20" width="26" height="46" rx="13" fill="#f2c9a0" stroke="#d9a97a" stroke-width="2.5"/>
+              <path d="M87,48 q13,9 26,0" fill="none" stroke="#d9a97a" stroke-width="2"/>
+              <line x1="100" y1="28" x2="100" y2="44" stroke="#d9a97a" stroke-width="1.6" opacity=".6"/>
+            </g>
+            <rect x="44" y="74" width="112" height="72" rx="14" fill="#f6dc93" stroke="#dcb65f" stroke-width="3"/>
+            <rect x="46" y="76" width="108" height="16" rx="8" fill="#a9c86e" stroke="#8aa84f" stroke-width="2.5"/>
+            <circle cx="66" cy="112" r="4" fill="#e6c271"/>
+            <circle cx="88" cy="120" r="4.5" fill="#e6c271"/>
+            <circle cx="112" cy="110" r="3.5" fill="#e6c271"/>
+            <circle cx="134" cy="120" r="5" fill="#e6c271"/>
+            <circle cx="78" cy="132" r="3.5" fill="#e6c271"/>
+            <circle cx="120" cy="134" r="4" fill="#e6c271"/>
+            <circle cx="100" cy="160" r="4" fill="#9fd0e8" stroke="#79b8d4" stroke-width="1.6"/>
+            <circle cx="114" cy="171" r="2.6" fill="#9fd0e8" stroke="#79b8d4" stroke-width="1.4"/>
           </g>
         </svg>
-        <svg id="bbBellows" class="bb-svg" viewBox="0 0 200 200">
-          <g id="bbBellowsG" style="transform-origin:100px 110px">
-            <rect x="52" y="176" width="96" height="16" rx="6" fill="#8a7f78"/>
-            <path d="M60,176 L70,64 L130,64 L140,176 Z" fill="rgba(160,150,140,.25)" stroke="#8a7f78" stroke-width="2.5"/>
-            <path d="M64,160 L76,72 M78,158 L90,70 M122,158 L110,70 M136,160 L124,72" stroke="#8a7f78" stroke-width="2.5"/>
-            <rect x="66" y="52" width="68" height="16" rx="6" fill="#8a7f78"/>
-            <circle cx="100" cy="120" r="22" fill="rgba(232,134,63,.35)" stroke="#e8863f" stroke-width="2.5" stroke-dasharray="5 4"/>
-            <path d="M100,104 v32 M88,116 l12 12 12-12" stroke="#e8863f" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <svg id="bbSpongeOld" class="bb-svg" viewBox="0 0 200 200">
+          <g id="bbSpongeOldG" style="transform-origin:100px 146px">
+            <g>
+              <rect x="87" y="20" width="26" height="46" rx="13" fill="#e8c9a8" stroke="#c9a17e" stroke-width="2.5"/>
+              <path d="M87,48 q13,9 26,0" fill="none" stroke="#c9a17e" stroke-width="2"/>
+              <line x1="100" y1="28" x2="100" y2="44" stroke="#c9a17e" stroke-width="1.6" opacity=".6"/>
+            </g>
+            <path d="M46,76 h108 q10,0 10,10 v50 q0,10 -10,10 h-22 l-7,6 h-20 l-7,-6 h-62 q-10,0 -10,-10 v-50 q0,-10 10,-10 z" fill="#ddd2b4" stroke="#b3a482" stroke-width="2.5"/>
+            <rect x="48" y="78" width="44" height="14" rx="7" fill="#b5b98a" stroke="#98a06e" stroke-width="2"/>
+            <rect x="112" y="78" width="38" height="14" rx="7" fill="#b5b98a" stroke="#98a06e" stroke-width="2"/>
+            <circle cx="68" cy="114" r="9" fill="#c9bd9a" stroke="#b3a482" stroke-width="2"/>
+            <circle cx="96" cy="122" r="11" fill="#c9bd9a" stroke="#b3a482" stroke-width="2"/>
+            <circle cx="130" cy="116" r="8" fill="#c9bd9a" stroke="#b3a482" stroke-width="2"/>
+            <circle cx="86" cy="136" r="6" fill="#c9bd9a" stroke="#b3a482" stroke-width="1.8"/>
+            <circle cx="122" cy="138" r="7" fill="#c9bd9a" stroke="#b3a482" stroke-width="1.8"/>
+            <circle cx="148" cy="54" r="16" fill="rgba(232,134,63,.18)" stroke="#e8863f" stroke-width="2.5" stroke-dasharray="5 4"/>
+            <path d="M148,38 v30 M136,50 l12 12 12,-12" stroke="#e8863f" stroke-width="3" fill="none" stroke-linecap="round"/>
           </g>
         </svg>
         <div class="bb-cap" id="bbCap">一吹一放，收放自如。气体进得顺，也出得干净。</div>
       </div>
       <button class="breath-btn" id="bbReplay" style="background:var(--accent);margin-top:8px">再演示一次</button>
-      <div class="bb-note">正常的肺像一只<b>新气球</b>；而我的肺像一只<b>又旧又漏的风箱</b>——进气口（气道）生锈变窄，箱体（肺泡）松弛破皮。气体吸得进来，却排不出去，全都陷在里头。医学上管这叫<b>“气体陷闭”</b>。<br><br>这就是慢阻肺的本质：<b>气道堵了，肺泡废了，呼吸变成一件费力的事。</b></div>
+      <div class="bb-note">正常的肺像一块<b>新海绵</b>——暄软有弹性，一按一挤，脏东西挤得掉，新鲜空气进得来、也出得去。而我的肺像一块<b>用久发硬的旧海绵</b>——按下去一个坑，半天弹不回来，孔越扯越大。气体吸得进来，却排不出去，全都陷在大孔里。医学上管这叫<b>“气体陷闭”</b>。<br><br>这就是慢阻肺的本质：<b>气道堵了，肺泡废了，呼吸变成一件费力的事。</b></div>
     </div>
 
     <p class="body rv">对了，顺便说一句：有人问我“慢阻肺和哮喘是不是一回事？”真不是。哮喘像气道“抽筋”，来得快去得快，能恢复正常；而我身上这些破坏和疤痕，是<b>不可逆</b>的——已经坏掉的肺泡，任何药物都长不回来。</p>
@@ -1289,20 +1309,20 @@ tio.observe($("#letter"));
   range.addEventListener("input",update); update();
 })();
 
-/* ================= 气球 vs 风箱 ================= */
+/* ================= 新海绵 vs 旧海绵 ================= */
 (function(){
-  var balloon=$("#bbBalloon"),bellows=$("#bbBellows"),cap=$("#bbCap"),balloonG=$("#bbBalloonG"),bellowsG=$("#bbBellowsG");
-  var caps={balloon:"一吹一放，收放自如。气体进得顺，也出得干净。",bellows:"进气口生锈变窄，箱体松弛破皮——气吸得进来，却排不出去，全陷在里头（气体陷闭）。"};
-  function play(which){ balloonG.classList.remove("play"); bellowsG.classList.remove("play");
-    void balloon.offsetWidth;
-    if(which==="balloon"){ balloon.classList.add("on"); bellows.classList.remove("on"); balloonG.classList.add("play"); }
-    else { bellows.classList.add("on"); balloon.classList.remove("on"); bellowsG.classList.add("play"); }
+  var newS=$("#bbSpongeNew"),oldS=$("#bbSpongeOld"),cap=$("#bbCap"),newG=$("#bbSpongeNewG"),oldG=$("#bbSpongeOldG");
+  var caps={spongeNew:"一按一挤，松松回弹。气进得来，也出得干净。",spongeOld:"发硬、松弛、一按一个坑——气吸得进来，却排不出去，全糊在大孔里（气体陷闭）。"};
+  function play(which){ newG.classList.remove("play"); oldG.classList.remove("play");
+    void newS.offsetWidth;
+    if(which==="spongeNew"){ newS.classList.add("on"); oldS.classList.remove("on"); newG.classList.add("play"); }
+    else { oldS.classList.add("on"); newS.classList.remove("on"); oldG.classList.add("play"); }
     cap.textContent=caps[which]; }
   $$(".bb-tabs button").forEach(function(b){ b.addEventListener("click",function(){
     $$(".bb-tabs button").forEach(function(x){x.classList.remove("on")}); b.classList.add("on");
     play(b.dataset.bb); }); });
-  $("#bbReplay").addEventListener("click",function(){ var on=$(".bb-tabs button.on"); play(on?on.dataset.bb:"balloon"); Sound.chime(false); });
-  play("balloon");
+  $("#bbReplay").addEventListener("click",function(){ var on=$(".bb-tabs button.on"); play(on?on.dataset.bb:"spongeNew"); Sound.chime(false); });
+  play("spongeNew");
 })();
 
 /* ================= 信号卡 ================= */
