@@ -109,6 +109,13 @@ h2{font-family:var(--fs);font-size:27px;line-height:1.4;margin:0 0 16px;font-wei
 #lungTree [id^="p-"].on{filter:drop-shadow(0 0 10px rgba(240,194,107,.85))}
 .tree-info{min-height:118px;background:var(--card);border:1px dashed var(--line);border-radius:14px;padding:14px 16px;margin-bottom:14px;font-size:14px;line-height:1.85;color:var(--muted);transition:.3s}
 .tree-info h4{font-size:16px;color:var(--ink);margin-bottom:6px;font-family:var(--fs)}
+.leaf-tag{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.leaf-tag .leaf-body{transition:transform .18s ease;transform-origin:center;transform-box:fill-box}
+.leaf-tag:hover .leaf-body,.leaf-tag.on .leaf-body{transform:scale(1.12)}
+.leaf-tag .leaf-shape{transition:fill .18s,stroke .18s}
+.leaf-tag.on .leaf-shape{fill:#fff;stroke:#a03a55;stroke-width:2.4}
+.leaf-txt{pointer-events:none;user-select:none}
+#lungTree #lungRight.lobe-on>path:first-of-type,#lungTree #lungLeft.lobe-on>path:first-of-type{stroke:#b8536a;stroke-width:3.2}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
 .chip{font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--muted);transition:.25s;user-select:none}
 .chip.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
@@ -435,9 +442,55 @@ footer.credits b{color:#c3cbdc}
             <path d="M300,158 C268,178 232,212 202,252"/>
           </g>
         </g>
-        <g font-size="11" fill="#a4495e" font-weight="700" text-anchor="middle" opacity=".85">
-          <text x="100" y="120">上叶</text><text x="141" y="226">中叶</text><text x="92" y="262">下叶</text>
-          <text x="250" y="120">上叶</text><text x="258" y="262">下叶</text>
+        <g class="leaf-tag" data-leaf="upperR" transform="translate(98,128)" role="button" aria-label="右肺上叶，点击查看介绍">
+          <g class="leaf-body">
+            <circle r="24" fill="transparent"/>
+            <path class="leaf-shape" d="M0,-27 C13,-19 21,-4 19,13 C17,28 9,36 0,40 C-9,36 -17,28 -19,13 C-21,-4 -13,-19 0,-27 Z" fill="rgba(255,255,255,.66)" stroke="#b8536a" stroke-width="2"/>
+            <g fill="none" stroke="#c97684" stroke-width="1.4" stroke-linecap="round" opacity=".85">
+              <path d="M0,-19 L0,33"/><path d="M0,-7 L-10,0 M0,-7 L10,0 M0,7 L-8,13 M0,7 L8,13"/>
+            </g>
+          </g>
+          <text class="leaf-txt" x="0" y="-9" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4495e">上叶</text>
+        </g>
+        <g class="leaf-tag" data-leaf="middleR" transform="translate(141,228)" role="button" aria-label="右肺中叶，点击查看介绍">
+          <g class="leaf-body">
+            <circle r="24" fill="transparent"/>
+            <path class="leaf-shape" d="M0,-27 C13,-19 21,-4 19,13 C17,28 9,36 0,40 C-9,36 -17,28 -19,13 C-21,-4 -13,-19 0,-27 Z" fill="rgba(255,255,255,.66)" stroke="#b8536a" stroke-width="2"/>
+            <g fill="none" stroke="#c97684" stroke-width="1.4" stroke-linecap="round" opacity=".85">
+              <path d="M0,-19 L0,33"/><path d="M0,-7 L-10,0 M0,-7 L10,0 M0,7 L-8,13 M0,7 L8,13"/>
+            </g>
+          </g>
+          <text class="leaf-txt" x="0" y="-9" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4495e">中叶</text>
+        </g>
+        <g class="leaf-tag" data-leaf="lowerR" transform="translate(92,262)" role="button" aria-label="右肺下叶，点击查看介绍">
+          <g class="leaf-body">
+            <circle r="24" fill="transparent"/>
+            <path class="leaf-shape" d="M0,-27 C13,-19 21,-4 19,13 C17,28 9,36 0,40 C-9,36 -17,28 -19,13 C-21,-4 -13,-19 0,-27 Z" fill="rgba(255,255,255,.66)" stroke="#b8536a" stroke-width="2"/>
+            <g fill="none" stroke="#c97684" stroke-width="1.4" stroke-linecap="round" opacity=".85">
+              <path d="M0,-19 L0,33"/><path d="M0,-7 L-10,0 M0,-7 L10,0 M0,7 L-8,13 M0,7 L8,13"/>
+            </g>
+          </g>
+          <text class="leaf-txt" x="0" y="-9" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4495e">下叶</text>
+        </g>
+        <g class="leaf-tag" data-leaf="upperL" transform="translate(250,128)" role="button" aria-label="左肺上叶，点击查看介绍">
+          <g class="leaf-body">
+            <circle r="24" fill="transparent"/>
+            <path class="leaf-shape" d="M0,-27 C13,-19 21,-4 19,13 C17,28 9,36 0,40 C-9,36 -17,28 -19,13 C-21,-4 -13,-19 0,-27 Z" fill="rgba(255,255,255,.66)" stroke="#b8536a" stroke-width="2"/>
+            <g fill="none" stroke="#c97684" stroke-width="1.4" stroke-linecap="round" opacity=".85">
+              <path d="M0,-19 L0,33"/><path d="M0,-7 L-10,0 M0,-7 L10,0 M0,7 L-8,13 M0,7 L8,13"/>
+            </g>
+          </g>
+          <text class="leaf-txt" x="0" y="-9" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4495e">上叶</text>
+        </g>
+        <g class="leaf-tag" data-leaf="lowerL" transform="translate(258,262)" role="button" aria-label="左肺下叶，点击查看介绍">
+          <g class="leaf-body">
+            <circle r="24" fill="transparent"/>
+            <path class="leaf-shape" d="M0,-27 C13,-19 21,-4 19,13 C17,28 9,36 0,40 C-9,36 -17,28 -19,13 C-21,-4 -13,-19 0,-27 Z" fill="rgba(255,255,255,.66)" stroke="#b8536a" stroke-width="2"/>
+            <g fill="none" stroke="#c97684" stroke-width="1.4" stroke-linecap="round" opacity=".85">
+              <path d="M0,-19 L0,33"/><path d="M0,-7 L-10,0 M0,-7 L10,0 M0,7 L-8,13 M0,7 L8,13"/>
+            </g>
+          </g>
+          <text class="leaf-txt" x="0" y="-9" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4495e">下叶</text>
         </g>
         <g font-size="13.5" fill="#8a5a2e" font-weight="700" text-anchor="middle">
           <text x="106" y="322">右肺 · 3 叶</text>
@@ -474,6 +527,7 @@ footer.credits b{color:#c3cbdc}
       </svg>
     </div>
     <div class="chips" id="treeChips">
+      <button class="chip" data-part="lobes">肺叶 · 左二右三</button>
       <button class="chip" data-part="trachea">气管 · 树干</button>
       <button class="chip" data-part="bronchi">支气管 · 树枝</button>
       <button class="chip" data-part="alveoli">肺泡 · 小葡萄</button>
@@ -1195,7 +1249,7 @@ tio.observe($("#letter"));
 /* ================= 肺树互动 ================= */
 (function(){
   var NS="http://www.w3.org/2000/svg";
-  var clusters=[[104,100],[142,196],[92,224],[120,140],[128,150],[256,100],[268,224],[240,140],[228,150]];
+  var clusters=[[110,92],[142,196],[92,224],[122,146],[128,150],[262,96],[268,224],[232,152],[222,158]];
   var offs=[[-9,-4,5],[6,-8,4.5],[-2,7,6],[9,4,4],[-10,5,3.5],[3,10,3]];
   var g=$("#p-alveoli");
   clusters.forEach(function(c){ offs.forEach(function(o){
@@ -1204,6 +1258,12 @@ tio.observe($("#letter"));
     ci.setAttribute("fill","#f7c3cb"); ci.setAttribute("stroke","#e0a3ad"); ci.setAttribute("stroke-width","1.2");
     g.appendChild(ci); }); });
   var info={
+    lobes:{t:"肺叶 · 左二右三",d:"左肺 2 叶、右肺 3 叶——右肺比左肺多一片中叶。斜裂和水平裂几道裂隙把肺切成一片一片，每叶各有自己的支气管进出。烟雾吸进来，每一叶都逃不掉。点树上的小树叶，认识每一片叶。"},
+    upperR:{t:"右肺 · 上叶",d:"右肺最靠上的一片，位置最高。烟雾吸进来，最先落脚的就是它——老烟枪的咳嗽、痰多，信号常常先从这一叶的支气管冒出来。"},
+    middleR:{t:"右肺 · 中叶",d:"右肺独有，左肺没有。夹在上下叶之间，它的支气管又细又长还带弯，最爱积痰发炎——“中叶综合征”说的就是这儿。"},
+    lowerR:{t:"右肺 · 下叶",d:"位置最低的一片，积液和异物容易往下沉。慢阻肺的小气道破坏常常从下叶开始，走几步就喘，和这里最先变窄关系很大。"},
+    upperL:{t:"左肺 · 上叶",d:"左肺上方的一大片，还带一小条“舌叶”，正好对着右肺中叶的位置。左边贴着心脏，所以左肺比右肺窄一些。"},
+    lowerL:{t:"左肺 · 下叶",d:"和右下叶左右对称，位置最低，也是气体交换的大场面所在。肺气肿里“小葡萄被撑破”的戏码，下叶往往演得最惨。"},
     trachea:{t:"气管 · 树干",d:"气体进出肺的主干道，从咽喉一路下来，在这里分作左右两支进入左右肺。烟最先灼烧的就是它。"},
     bronchi:{t:"支气管 · 树枝",d:"像树干一样层层分叉，一共 20 多级，越分越细，把气体送到肺的每一个角落——层级越多，越容易被炎症层层堵死。"},
     alveoli:{t:"肺泡 · 小葡萄",d:"树梢上挂着 6 亿多颗小葡萄，全部铺开有半个网球场大。氧气在这里钻进血液，二氧化碳在这里被吹出去。半个网球场，就是 6 亿颗肺泡铺开的大小。"},
@@ -1211,13 +1271,19 @@ tio.observe($("#letter"));
     mucus:{t:"黏液 · 粘胶队",d:"负责把垃圾粘住，等着被你咳出去。一粘一扫，和纤毛配合默契，是肺里的常驻保洁组合。"}
   };
   var box=$("#treeBox"),panel=$("#treeInfo");
+  var lobeOf={upperR:"lungRight",middleR:"lungRight",lowerR:"lungRight",upperL:"lungLeft",lowerL:"lungLeft"};
   function focus(part){ var d=info[part]; if(!d) return;
+    var leaf=part.replace("leaf-","");
     box.classList.add("focus");
     $$("#lungTree [id^='p-']").forEach(function(g2){ g2.classList.toggle("on",g2.id==="p-"+part); });
     $$("#treeChips .chip").forEach(function(c){ c.classList.toggle("on",c.dataset.part===part); });
+    $$("#lungTree .leaf-tag").forEach(function(l){ l.classList.toggle("on",part==="lobes"||l.dataset.leaf===leaf); });
+    var lobe=lobeOf[leaf];
+    ["lungRight","lungLeft"].forEach(function(id){ $(id).classList.toggle("lobe-on",part==="lobes"||id===lobe); });
     panel.innerHTML="<h4>"+d.t+"</h4>"+d.d; }
   $$("#treeChips .chip").forEach(function(c){ c.addEventListener("click",function(){ focus(c.dataset.part); }); });
   $$("#lungTree [id^='p-']").forEach(function(g2){ g2.addEventListener("click",function(){ focus(g2.id.replace("p-","")); }); });
+  $$("#lungTree .leaf-tag").forEach(function(l){ l.addEventListener("click",function(ev){ ev.stopPropagation(); focus("leaf-"+l.dataset.leaf); }); });
 })();
 
 /* ================= 吸烟滑杆 ================= */
