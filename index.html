@@ -1272,14 +1272,13 @@ tio.observe($("#letter"));
   };
   var box=$("#treeBox"),panel=$("#treeInfo");
   var lobeOf={upperR:"lungRight",middleR:"lungRight",lowerR:"lungRight",upperL:"lungLeft",lowerL:"lungLeft"};
-  function focus(part){ var d=info[part]; if(!d) return;
-    var leaf=part.replace("leaf-","");
+  function focus(raw){ var leaf=raw.replace("leaf-",""); var part=info[raw]?raw:leaf; var d=info[part]; if(!d) return;
     box.classList.add("focus");
     $$("#lungTree [id^='p-']").forEach(function(g2){ g2.classList.toggle("on",g2.id==="p-"+part); });
     $$("#treeChips .chip").forEach(function(c){ c.classList.toggle("on",c.dataset.part===part); });
     $$("#lungTree .leaf-tag").forEach(function(l){ l.classList.toggle("on",part==="lobes"||l.dataset.leaf===leaf); });
     var lobe=lobeOf[leaf];
-    ["lungRight","lungLeft"].forEach(function(id){ $(id).classList.toggle("lobe-on",part==="lobes"||id===lobe); });
+    ["lungRight","lungLeft"].forEach(function(id){ $("#"+id).classList.toggle("lobe-on",part==="lobes"||id===lobe); });
     panel.innerHTML="<h4>"+d.t+"</h4>"+d.d; }
   $$("#treeChips .chip").forEach(function(c){ c.addEventListener("click",function(){ focus(c.dataset.part); }); });
   $$("#lungTree [id^='p-']").forEach(function(g2){ g2.addEventListener("click",function(){ focus(g2.id.replace("p-","")); }); });
